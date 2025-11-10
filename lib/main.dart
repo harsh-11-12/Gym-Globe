@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/home_page.dart';
 import 'package:gym_globe/pages/login_page.dart';
-import 'package:gym_globe/utils/routes.dart';
+
+import 'package:velocity_x/velocity_x.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,14 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Container(child: Text("lets get staretd with gym globe")),
-      ),
-      initialRoute: MyRoutes.homeRoute,
+      themeMode: ThemeMode.system,
+
+      home: HomePage(),
+      initialRoute: '/login',
       routes: {
-        "/": (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
+        '/home': (context) => HomePage(),
+        '/login': (context) => LoginPage(),
       },
     );
   }
