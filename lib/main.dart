@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/home_page.dart';
 import 'package:gym_globe/pages/login_page.dart';
 
-import 'package:velocity_x/velocity_x.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 void main() {
   runApp(MyApp());
 }
