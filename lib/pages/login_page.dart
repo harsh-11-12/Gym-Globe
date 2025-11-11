@@ -41,9 +41,10 @@ class _LoginPageState extends State<LoginPage>
       vsync: this,
       duration: const Duration(milliseconds: 1500),
     )..repeat(reverse: true);
-    _glowAnim = Tween<double>(begin: 4.0, end: 16.0).animate(
-      CurvedAnimation(parent: _glowCtrl, curve: Curves.easeInOut),
-    );
+    _glowAnim = Tween<double>(
+      begin: 4.0,
+      end: 16.0,
+    ).animate(CurvedAnimation(parent: _glowCtrl, curve: Curves.easeInOut));
 
     // IMPROVEMENT: No need to listen to controller for live name preview
     // We'll show "Welcome Back, [Name]!" only after successful login
@@ -69,7 +70,8 @@ class _LoginPageState extends State<LoginPage>
   }) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.inter(color: Colors.white60),
+      hintStyle: GoogleFonts.inter(color: Colors.white70),
+      labelStyle: GoogleFonts.inter(color: Colors.white),
       prefixIcon: Icon(icon, color: Colors.cyanAccent),
       suffixIcon: suffix,
       filled: true,
@@ -213,13 +215,16 @@ class _LoginPageState extends State<LoginPage>
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       autofillHints: const [AutofillHints.email],
+                      style: GoogleFonts.inter(color: Colors.white),
                       decoration: _inputDec(
                         hint: 'Email',
                         icon: Icons.email_outlined,
                       ),
                       validator: (v) {
                         if (v == null || v.isEmpty) return 'Enter your email';
-                        if (!RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w]{2,}$').hasMatch(v)) {
+                        if (!RegExp(
+                          r'^[\w\-\.]+@([\w\-]+\.)+[\w]{2,}$',
+                        ).hasMatch(v)) {
                           return 'Invalid email';
                         }
                         return null;
@@ -235,6 +240,7 @@ class _LoginPageState extends State<LoginPage>
                       focusNode: _pwdFocus,
                       obscureText: _obscurePwd,
                       textInputAction: TextInputAction.done,
+                      style: GoogleFonts.inter(color: Colors.white),
                       decoration: _inputDec(
                         hint: 'Password',
                         icon: Icons.lock_outline,
@@ -245,7 +251,8 @@ class _LoginPageState extends State<LoginPage>
                                 : Icons.visibility,
                             color: Colors.cyanAccent,
                           ),
-                          onPressed: () => setState(() => _obscurePwd = !_obscurePwd),
+                          onPressed: () =>
+                              setState(() => _obscurePwd = !_obscurePwd),
                         ),
                       ),
                       validator: (v) =>
