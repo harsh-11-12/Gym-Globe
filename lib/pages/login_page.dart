@@ -1,6 +1,7 @@
 // login_page.dart
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 /// ---------------------------------------------------------------------------
 ///  GYM GLOBE – Login Page
@@ -363,11 +364,11 @@ class _LoginPageState extends State<LoginPage>
                       icon: Image.asset(
                         'assets/icons/google.png', // Add Google logo
                         height: 24,
-                      ),
+                      ).p8(),
                       label: Text(
                         'Continue with Google',
                         style: GoogleFonts.inter(color: Colors.white),
-                      ),
+                      ).p8(),
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.white30),
                         padding: const EdgeInsets.symmetric(vertical: 14),
