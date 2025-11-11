@@ -1,6 +1,7 @@
 // login_page.dart
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gym_globe/utils/routes.dart';
 
 /// ---------------------------------------------------------------------------
 ///  GYM GLOBE – Login Page
@@ -388,7 +389,7 @@ class _LoginPageState extends State<LoginPage>
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/signup');
+                            Navigator.pushNamed(context, MyRoutes.signUpRoute);
                           },
                           child: Text(
                             'Sign Up',

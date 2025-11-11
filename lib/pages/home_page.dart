@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gym_globe/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -57,14 +58,15 @@ class HomePage extends StatelessWidget {
                   radius: 130,
                   backgroundColor: Colors.transparent,
                   child: ClipOval(
-                    child: Image.asset('assets/images/avatar_waving.png'),
+                    child: Image.asset('assets/images/avatar.png'),
                   ),
                 ),
               ),
             ),
             20.heightBox,
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () =>
+                  Navigator.pushNamed(context, MyRoutes.signUpRoute),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
@@ -77,7 +79,7 @@ class HomePage extends StatelessWidget {
             "Already have an account ?".text.white.make(),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 40, 163, 16),

@@ -144,6 +144,9 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                   fit: BoxFit.cover,
                 ),
               ),
+              Positioned.fill(
+                child: Container(color: Colors.black.withOpacity(0.7)),
+              ),
               SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(20),
