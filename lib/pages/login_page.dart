@@ -154,6 +154,7 @@ class _LoginPageState extends State<LoginPage>
   // -------------------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
