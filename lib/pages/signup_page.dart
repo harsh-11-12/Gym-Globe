@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +35,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       'image': 'assets/images/avatar_thinking.png',
     },
   ];
-  final bool _isLoading = false;
+  bool _isLoading = false;
   late final Animation<double> _glowAnim;
   late final AnimationController _glowCtrl;
 
@@ -118,7 +120,6 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       });
     } else {
       // Signup complete logic
-      // ignore: avoid_print
       print('Signup Data: $userData');
     }
   }
@@ -134,7 +135,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: SizedBox(
+        child: Container(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
@@ -146,10 +147,6 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                 ),
               ),
               Positioned.fill(
-<<<<<<< HEAD
-                // ignore: deprecated_member_use
-=======
->>>>>>> temp_amit
                 child: Container(color: Colors.black.withOpacity(0.7)),
               ),
               SingleChildScrollView(
@@ -226,7 +223,6 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(16),
                               boxShadow: [
                                 BoxShadow(
-                                  // ignore: deprecated_member_use
                                   color: Colors.cyanAccent.withOpacity(0.6),
                                   blurRadius: _glowAnim.value,
                                   spreadRadius: _glowAnim.value / 2,
