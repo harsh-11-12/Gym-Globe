@@ -146,7 +146,10 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                 ),
               ),
               Positioned.fill(
+<<<<<<< HEAD
                 // ignore: deprecated_member_use
+=======
+>>>>>>> temp_amit
                 child: Container(color: Colors.black.withOpacity(0.7)),
               ),
               SingleChildScrollView(

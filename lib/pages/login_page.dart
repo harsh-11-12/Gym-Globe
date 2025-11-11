@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_globe/utils/routes.dart';
+<<<<<<< HEAD
 import 'package:velocity_x/velocity_x.dart';
+=======
+>>>>>>> temp_amit
 
 /// ---------------------------------------------------------------------------
 ///  GYM GLOBE – Login Page
