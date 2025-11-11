@@ -1,6 +1,7 @@
 // login_page.dart
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gym_globe/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 /// ---------------------------------------------------------------------------
@@ -76,6 +77,7 @@ class _LoginPageState extends State<LoginPage>
       prefixIcon: Icon(icon, color: Colors.cyanAccent),
       suffixIcon: suffix,
       filled: true,
+      // ignore: deprecated_member_use
       fillColor: Colors.white.withOpacity(0.1),
       contentPadding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
       border: OutlineInputBorder(
@@ -282,6 +284,7 @@ class _LoginPageState extends State<LoginPage>
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
+                          // ignore: deprecated_member_use
                           color: Colors.red.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(color: Colors.redAccent),
@@ -303,6 +306,7 @@ class _LoginPageState extends State<LoginPage>
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
+                                // ignore: deprecated_member_use
                                 color: Colors.cyanAccent.withOpacity(0.6),
                                 blurRadius: _glowAnim.value,
                                 spreadRadius: _glowAnim.value / 2,
@@ -389,7 +393,7 @@ class _LoginPageState extends State<LoginPage>
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/signup');
+                            Navigator.pushNamed(context, MyRoutes.signUpRoute);
                           },
                           child: Text(
                             'Sign Up',

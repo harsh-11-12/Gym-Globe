@@ -33,7 +33,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       'image': 'assets/images/avatar_thinking.png',
     },
   ];
-  bool _isLoading = false;
+  final bool _isLoading = false;
   late final Animation<double> _glowAnim;
   late final AnimationController _glowCtrl;
 
@@ -118,6 +118,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       });
     } else {
       // Signup complete logic
+      // ignore: avoid_print
       print('Signup Data: $userData');
     }
   }
@@ -133,7 +134,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
@@ -143,6 +144,10 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                   'assets/images/background.jpeg',
                   fit: BoxFit.cover,
                 ),
+              ),
+              Positioned.fill(
+                // ignore: deprecated_member_use
+                child: Container(color: Colors.black.withOpacity(0.7)),
               ),
               SingleChildScrollView(
                 child: Padding(
@@ -218,6 +223,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(16),
                               boxShadow: [
                                 BoxShadow(
+                                  // ignore: deprecated_member_use
                                   color: Colors.cyanAccent.withOpacity(0.6),
                                   blurRadius: _glowAnim.value,
                                   spreadRadius: _glowAnim.value / 2,

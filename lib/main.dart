@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/home_page.dart';
 import 'package:gym_globe/pages/login_page.dart';
 import 'package:gym_globe/pages/signup_page.dart';
+import 'package:gym_globe/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,11 +17,11 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
 
       home: HomePage(),
-      initialRoute: '/signup',
+      initialRoute: '/',
       routes: {
-        '/home': (context) => HomePage(),
-        '/login': (context) => LoginPage(),
-        '/signup': (context) => SignupPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.signUpRoute: (context) => SignupPage(),
       },
     );
   }
