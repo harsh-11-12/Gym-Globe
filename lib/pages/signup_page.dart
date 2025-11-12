@@ -35,7 +35,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       'image': 'assets/images/avatar_thinking.png',
     },
   ];
-  bool _isLoading = false;
+  final bool _isLoading = false;
   late final Animation<double> _glowAnim;
   late final AnimationController _glowCtrl;
 
@@ -135,7 +135,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
