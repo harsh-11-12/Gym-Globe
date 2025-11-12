@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage>
   }
 
   void _navigateToRoleSelection() {
-    Navigator.of(context).pushReplacementNamed('/role_selection');
+    Navigator.pushReplacementNamed(context, MyRoutes.roleSelectionRoute);
   }
 
   // -------------------------------------------------------------------------

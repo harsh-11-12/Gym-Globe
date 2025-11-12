@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gym_globe/utils/routes.dart';
 
 /// ---------------------------------------------------------------------------
 ///  GYM GLOBE – Sign-Up (Step-by-Step)
@@ -173,7 +174,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
   }
 
   void _navigateToRoleSelection() {
-    Navigator.of(context).pushReplacementNamed('/role_selection');
+    Navigator.pushReplacementNamed(context, MyRoutes.roleSelectionRoute);
   }
 
   // --------------------------------------------------------------------- //
