@@ -248,8 +248,6 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                       ), // ← WHITE TEXT
                       decoration: _inputDec(hint: 'Type here...'),
                       validator: step.validator,
-                      textInputAction: TextInputAction.next,
-                      onFieldSubmitted: (_) => _nextStep(),
                     ),
 
                     // Error message

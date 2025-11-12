@@ -178,7 +178,6 @@ class _LoginPageState extends State<LoginPage>
               padding: const EdgeInsets.fromLTRB(24, 40, 24, 24),
               child: Form(
                 key: _formKey,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   children: [
                     // Logo
@@ -217,7 +216,7 @@ class _LoginPageState extends State<LoginPage>
                       controller: _emailCtrl,
                       focusNode: _emailFocus,
                       keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
+
                       autofillHints: const [AutofillHints.email],
                       style: GoogleFonts.inter(color: Colors.white),
                       decoration: _inputDec(
@@ -225,13 +224,15 @@ class _LoginPageState extends State<LoginPage>
                         icon: Icons.email_outlined,
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Enter your email';
-                        if (!RegExp(
-                          r'^[\w\-\.]+@([\w\-]+\.)+[\w]{2,}$',
+                        if (v == null || v.isEmpty) {
+                          return 'Enter your email';
+                        } else if (!RegExp(
+                          r'^[\w\.-]+@[\w\.-]+\.\w+$',
                         ).hasMatch(v)) {
-                          return 'Invalid email';
+                          return 'Enter a valid email';
+                        } else {
+                          return null;
                         }
-                        return null;
                       },
                       onFieldSubmitted: (_) =>
                           FocusScope.of(context).requestFocus(_pwdFocus),
@@ -243,7 +244,7 @@ class _LoginPageState extends State<LoginPage>
                       controller: _pwdCtrl,
                       focusNode: _pwdFocus,
                       obscureText: _obscurePwd,
-                      textInputAction: TextInputAction.done,
+
                       style: GoogleFonts.inter(color: Colors.white),
                       decoration: _inputDec(
                         hint: 'Password',
@@ -315,7 +316,13 @@ class _LoginPageState extends State<LoginPage>
                             ],
                           ),
                           child: ElevatedButton(
-                            onPressed: _isLoading ? null : _signInWithEmail,
+                            onPressed: () {
+                              if (_formKey.currentState!.validate() &&
+                                  _isLoading == true) {
+                                _signInWithEmail();
+                              }
+                            },
+                            // _isLoading ? null : _signInWithEmail,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.cyanAccent,
                               foregroundColor: Colors.black,

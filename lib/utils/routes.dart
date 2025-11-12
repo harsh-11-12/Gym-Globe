@@ -4,8 +4,6 @@ class MyRoutes {
   static const String signUpRoute = "/signup";
   static const String roleSelectionRoute = "/roleselection";
 
-  // Future routes 
-  static const String userDashboard = "/user_dashboard";
-  static const String gymDashboard = "/gym_dashboard";
-  static const String trainerDashboard = "/trainer_dashboard";
+  static String userDashBoard = '/userpage';
+  static String userProfile = '/profile';
 }

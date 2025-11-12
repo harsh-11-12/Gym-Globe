@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gym_globe/utils/routes.dart';
 
 class RoleSelectionPage extends StatefulWidget {
   const RoleSelectionPage({super.key});
@@ -47,7 +48,7 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
     // Replace with your actual dashboard routes
     switch (role) {
       case 'user':
-        Navigator.pushReplacementNamed(context, '/user_dashboard');
+        Navigator.pushReplacementNamed(context, MyRoutes.userDashBoard);
         break;
       case 'gym':
         Navigator.pushReplacementNamed(context, '/gym_dashboard');
@@ -184,7 +185,7 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
         return GestureDetector(
           onTap: onTap,
           child: Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [color.withOpacity(0.2), color.withOpacity(0.05)],
@@ -205,7 +206,7 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
               children: [
                 // Icon
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: color.withOpacity(0.2),
                     shape: BoxShape.circle,
@@ -232,7 +233,7 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
                       Text(
                         subtitle,
                         style: GoogleFonts.inter(
-                          fontSize: 13,
+                          fontSize: 12,
                           color: Colors.white70,
                         ),
                       ),
