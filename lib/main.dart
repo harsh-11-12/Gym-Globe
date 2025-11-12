@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.trainerDashboard: (context) => const TrainerDashboardPage(),
         MyRoutes.gymDashboard: (context) => const GymPage(),
       },
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.homeRoute,
     );
   }
 }
