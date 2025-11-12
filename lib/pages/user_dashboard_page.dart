@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/profile_page.dart';
-import 'package:gym_globe/utils/routes.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({super.key});
