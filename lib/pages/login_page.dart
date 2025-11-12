@@ -373,7 +373,7 @@ class _LoginPageState extends State<LoginPage>
                       label: Text(
                         'Continue with Google',
                         style: GoogleFonts.inter(color: Colors.white),
-                      ).p8(),
+                      ).p12(),
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.white30),
                         padding: const EdgeInsets.symmetric(vertical: 14),
