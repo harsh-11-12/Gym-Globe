@@ -51,10 +51,10 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
         Navigator.pushReplacementNamed(context, MyRoutes.userDashBoard);
         break;
       case 'gym':
-        Navigator.pushReplacementNamed(context, '/gym_dashboard');
+        Navigator.pushReplacementNamed(context, MyRoutes.ownerDashBoard);
         break;
       case 'trainer':
-        Navigator.pushReplacementNamed(context, '/trainer_dashboard');
+        Navigator.pushReplacementNamed(context, MyRoutes.trainerDashBoard);
         break;
     }
   }
