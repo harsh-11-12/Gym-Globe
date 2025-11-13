@@ -6,4 +6,7 @@ class MyRoutes {
 
   static String userDashBoard = '/userpage';
   static String userProfile = '/profile';
+
+  static String trainerDashBoard = '/trainer';
+  static String ownerDashBoard = '/gymOwner';
 }

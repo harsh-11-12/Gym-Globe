@@ -243,6 +243,7 @@ class _SignupPageState extends State<SignupPage> with TickerProviderStateMixin {
                       controller: _controller,
                       focusNode: _focusNode,
                       obscureText: step.obscureText,
+                      keyboardType: TextInputType.emailAddress,
                       style: GoogleFonts.inter(
                         color: Colors.white,
                       ), // ← WHITE TEXT
