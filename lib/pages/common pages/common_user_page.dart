@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gym_globe/pages/common%20pages/additonalTrainerPage.dart';
-import 'package:gym_globe/pages/common%20pages/addtionalOwnerPage.dart';
+import 'package:gym_globe/pages/common%20pages/additonal_trainer_page.dart';
+import 'package:gym_globe/pages/common%20pages/addtional_owner_page.dart';
 
-import 'package:gym_globe/pages/common%20pages/chatPage.dart';
-import 'package:gym_globe/pages/common%20pages/contentPage.dart';
-import 'package:gym_globe/pages/common%20pages/dietPage.dart';
-import 'package:gym_globe/pages/common%20pages/homePage.dart';
-import 'package:gym_globe/pages/common%20pages/searchPage.dart';
-import 'package:gym_globe/pages/common%20pages/workoutPage.dart';
+import 'package:gym_globe/pages/common%20pages/chat_page.dart';
+import 'package:gym_globe/pages/common%20pages/content_page.dart';
+import 'package:gym_globe/pages/common%20pages/diet_page.dart';
+import 'package:gym_globe/pages/common%20pages/home_page.dart';
+import 'package:gym_globe/pages/common%20pages/search_page.dart';
+import 'package:gym_globe/pages/common%20pages/workout_page.dart';
 
 class RoleMainPage extends StatefulWidget {
   final String? role;
