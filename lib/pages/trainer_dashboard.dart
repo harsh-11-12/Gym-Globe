@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class TrainerInfoPage extends StatefulWidget {
-  const TrainerInfoPage({super.key});
+class TrainerDashboardPage extends StatefulWidget {
+  const TrainerDashboardPage({super.key});
 
   @override
-  State<TrainerInfoPage> createState() => _TrainerInfoPageState();
+  State<TrainerDashboardPage> createState() => _TrainerDashboardPageState();
 }
 
-class _TrainerInfoPageState extends State<TrainerInfoPage> {
+class _TrainerDashboardPageState extends State<TrainerDashboardPage> {
   final _formKey = GlobalKey<FormState>();
   final ImagePicker _picker = ImagePicker();
   File? _profileImage;

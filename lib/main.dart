@@ -26,12 +26,12 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginRoute: (context) => const LoginPage(),
         MyRoutes.signUpRoute: (context) => const SignupPage(),
         MyRoutes.roleSelectionRoute: (context) => const RoleSelectionPage(),
-        MyRoutes.userDashBoard: (context) => const UserPage(),
+        MyRoutes.userDashBoard: (context) => const UserDashboardPage(),
         MyRoutes.userProfile: (context) => const ProfilePage(),
-        MyRoutes.trainerDashBoard: (context) => const TrainerInfoPage(),
-        MyRoutes.ownerDashBoard: (context) => const GymPage(),
+        MyRoutes.trainerDashBoard: (context) => const TrainerDashboardPage(),
+        MyRoutes.ownerDashBoard: (context) => const OwnerDashboard(),
       },
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.roleSelectionRoute,
     );
   }
 }

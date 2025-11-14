@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/profile_page.dart';
 
-class UserPage extends StatefulWidget {
-  const UserPage({super.key});
+class UserDashboardPage extends StatefulWidget {
+  const UserDashboardPage({super.key});
 
   @override
-  State<UserPage> createState() => _UserPageState();
+  State<UserDashboardPage> createState() => _UserDashboardPageState();
 }
 
-class _UserPageState extends State<UserPage> {
+class _UserDashboardPageState extends State<UserDashboardPage> {
   String? gender;
 
   double age = 20;
