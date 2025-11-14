@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/harsh/Documents/Gym Globe/gym_globe/linux"
+    "cmake.sourceDirectory": "/home/harsh/Documents/Gym Globe/gym_globe/linux",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
