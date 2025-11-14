@@ -4,14 +4,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class OwnerDashboard extends StatefulWidget {
-  const OwnerDashboard({super.key});
+class OwnerDashboardPage extends StatefulWidget {
+  const OwnerDashboardPage({super.key});
 
   @override
-  State<OwnerDashboard> createState() => _OwnerDashboardState();
+  State<OwnerDashboardPage> createState() => _OwnerDashboardPageState();
 }
 
-class _OwnerDashboardState extends State<OwnerDashboard> {
+class _OwnerDashboardPageState extends State<OwnerDashboardPage> {
   final _formKey = GlobalKey<FormState>();
   final ImagePicker _picker = ImagePicker();
   List<File> _gymImages = [];
@@ -110,13 +110,9 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Header
-                    "Post Your Gym"
-                        .text
-                        .cyan400
-                        .xl3
-                        .bold
-                        .make()
-                        .pOnly(bottom: 20),
+                    "Post Your Gym".text.cyan400.xl3.bold.make().pOnly(
+                      bottom: 20,
+                    ),
 
                     // Gym Images
                     Center(
@@ -126,7 +122,10 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
                           height: 180,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.cyanAccent, width: 2),
+                            border: Border.all(
+                              color: Colors.cyanAccent,
+                              width: 2,
+                            ),
                             borderRadius: BorderRadius.circular(16),
                             color: Colors.grey[900]!.withOpacity(0.5),
                           ),
@@ -134,13 +133,13 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
                               ? Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    const Icon(Icons.add_a_photo,
-                                        size: 50, color: Colors.cyanAccent),
+                                    const Icon(
+                                      Icons.add_a_photo,
+                                      size: 50,
+                                      color: Colors.cyanAccent,
+                                    ),
                                     const HeightBox(8),
-                                    "Tap to Add Gym Photos"
-                                        .text
-                                        .white
-                                        .lg
+                                    "Tap to Add Gym Photos".text.white.lg
                                         .make(),
                                   ],
                                 )
@@ -164,19 +163,27 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
                       decoration: InputDecoration(
                         labelText: 'Gym Type',
                         labelStyle: const TextStyle(color: Colors.white),
-                        prefixIcon:
-                            const Icon(Icons.category, color: Colors.cyanAccent),
+                        prefixIcon: const Icon(
+                          Icons.category,
+                          color: Colors.cyanAccent,
+                        ),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12)),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.indigoAccent),
+                          borderSide: const BorderSide(
+                            color: Colors.indigoAccent,
+                          ),
                         ),
                       ),
                       value: _selectedGymType,
                       items: _gymTypes
-                          .map((type) => DropdownMenuItem(
-                              value: type, child: Text(type)))
+                          .map(
+                            (type) => DropdownMenuItem(
+                              value: type,
+                              child: Text(type),
+                            ),
+                          )
                           .toList(),
                       onChanged: (val) =>
                           setState(() => _selectedGymType = val),
@@ -252,17 +259,19 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
                       child: ElevatedButton.icon(
                         onPressed: _submitGymDetails,
                         icon: const Icon(Icons.send, color: Colors.white),
-                        label: "Post Gym"
-                            .text
-                            .xl
-                            .bold
-                            .white
-                            .make(),
+                        label: "Post Gym".text.xl.bold.white.make(),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.cyanAccent,
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            61,
+                            83,
+                            83,
+                          ),
                           foregroundColor: Colors.black,
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 16),
+                            horizontal: 50,
+                            vertical: 16,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
                           ),
@@ -315,14 +324,12 @@ class _OwnerDashboardState extends State<OwnerDashboard> {
         keyboardType: keyboard,
         maxLines: maxLines,
         style: const TextStyle(color: Colors.white),
-        validator: (v) =>
-            v == null || v.trim().isEmpty ? 'Enter $label' : null,
+        validator: (v) => v == null || v.trim().isEmpty ? 'Enter $label' : null,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: const TextStyle(color: Colors.white),
           prefixIcon: Icon(icon, color: Colors.cyanAccent),
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.indigoAccent),
           ),

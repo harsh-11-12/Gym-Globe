@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.userDashBoard: (context) => const UserDashboardPage(),
         MyRoutes.userProfile: (context) => const ProfilePage(),
         MyRoutes.trainerDashBoard: (context) => const TrainerDashboardPage(),
-        MyRoutes.ownerDashBoard: (context) => const OwnerDashboard(),
+        MyRoutes.ownerDashBoard: (context) => const OwnerDashboardPage(),
       },
       initialRoute: MyRoutes.roleSelectionRoute,
     );
