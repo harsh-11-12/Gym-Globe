@@ -9,4 +9,5 @@ class MyRoutes {
 
   static String trainerDashBoard = '/trainer';
   static String ownerDashBoard = '/gymOwner';
+  static String roleMainPage = '/roleMainPage';
 }
