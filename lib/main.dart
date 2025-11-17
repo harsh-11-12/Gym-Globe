@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.trainerDashBoard: (context) => const TrainerDashboardPage(),
         MyRoutes.ownerDashBoard: (context) => const OwnerDashboardPage(),
       },
-      initialRoute: MyRoutes.roleSelectionRoute,
+      initialRoute: MyRoutes.homeRoute,
     );
   }
 }
