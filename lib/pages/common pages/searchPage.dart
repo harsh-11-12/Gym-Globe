@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gym_globe/pages/common%20pages/workoutPage.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
