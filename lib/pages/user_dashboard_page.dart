@@ -1,7 +1,8 @@
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:gym_globe/pages/profile_page.dart';
+import 'common pages/RoleMainPage.dart';
+
 
 class UserDashboardPage extends StatefulWidget {
   const UserDashboardPage({super.key});
@@ -159,12 +160,13 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                               onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ProfilePage(
-                                    gender: gender,
-                                    age: age,
-                                    weight: weight,
-                                    height: height,
-                                    activityLevel: activityLevel,
+                                  builder: (context) => RoleMainPage(
+                                    userGender: gender,
+                                    userAge: age,
+                                    userWeight: weight,
+                                    userHeight: height,
+                                    userActivityLevel: activityLevel,
+                                    userRole: "User",
                                   ),
                                 ),
                               ),
