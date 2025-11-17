@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:gym_globe/pages/common%20pages/RoleMainPage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -257,7 +258,10 @@ class _OwnerDashboardPageState extends State<OwnerDashboardPage> {
                     // Submit Button
                     Center(
                       child: ElevatedButton.icon(
-                        onPressed: _submitGymDetails,
+                        onPressed: () {
+                          _submitGymDetails;
+                          RoleMainPage();
+                        },
                         icon: const Icon(Icons.send, color: Colors.white),
                         label: "Post Gym".text.xl.bold.white.make(),
                         style: ElevatedButton.styleFrom(

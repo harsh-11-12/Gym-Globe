@@ -10,8 +10,23 @@ import 'package:gym_globe/pages/common%20pages/search_page.dart';
 import 'package:gym_globe/pages/common%20pages/workout_page.dart';
 
 class RoleMainPage extends StatefulWidget {
-  final String? role;
-  const RoleMainPage({super.key, this.role});
+  final String? userRole;
+  final String? userName;
+  final String? userGender;
+  final double? userAge;
+  final double? userWeight;
+  final double? userHeight;
+  final String? userActivityLevel;
+  RoleMainPage({
+    super.key,
+    this.userGender,
+    this.userAge,
+    this.userWeight,
+    this.userHeight,
+    this.userActivityLevel,
+    this.userName,
+    this.userRole,
+  });
 
   @override
   State<RoleMainPage> createState() => _RoleMainPageState();
@@ -23,7 +38,13 @@ class _RoleMainPageState extends State<RoleMainPage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> userPages = [
-      const Home(),
+      Home(
+        name: widget.userName,
+        gender: widget.userGender,
+        age: widget.userAge,
+        weight: widget.userWeight,
+        height: widget.userHeight,
+      ),
       DietPage(),
       const WorkoutPage(),
       const SearchPage(),
@@ -52,9 +73,9 @@ class _RoleMainPageState extends State<RoleMainPage> {
     ];
 
     return Scaffold(
-      body: (widget.role == "trainer")
+      body: (widget.userRole == "trainer")
           ? trainerPages[pageIndex]
-          : (widget.role == "owner")
+          : (widget.userRole == "owner")
           ? ownerPages[pageIndex]
           : userPages[pageIndex],
       bottomNavigationBar: buildBottomNav(),
@@ -77,14 +98,14 @@ class _RoleMainPageState extends State<RoleMainPage> {
       ),
     ];
 
-    if (widget.role == "trainer") {
+    if (widget.userRole == "trainer") {
       baseItems.add(
         const BottomNavigationBarItem(
           icon: Icon(Icons.dashboard),
           label: "Dashboard",
         ),
       );
-    } else if (widget.role == "owner") {
+    } else if (widget.userRole == "owner") {
       baseItems.add(
         const BottomNavigationBarItem(
           icon: Icon(Icons.business),

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
+
+// ignore: must_be_immutable
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  //User Data
+  String? name;
+  String? gender;
+  double? height;
+  double? weight;
+  double? age;
+
+  Home({super.key, this.name, this.age, this.gender, this.height, this.weight});
 
   @override
   State<Home> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<Home> {
-  // User data
-  String userName = "User Name";
-  int userAge = 25;
-  String userGender = "Male";
-  double userHeight = 175.0; // cm
-  double userWeight = 70.0; // kg
   String userBio = "Fitness enthusiast working towards a healthier lifestyle!";
 
   // Progress data
@@ -87,12 +90,16 @@ class _HomePageState extends State<Home> {
   }
 
   void _editUserProfile() {
-    final nameController = TextEditingController(text: userName);
-    final ageController = TextEditingController(text: userAge.toString());
-    final heightController = TextEditingController(text: userHeight.toString());
-    final weightController = TextEditingController(text: userWeight.toString());
+    final nameController = TextEditingController(text: widget.name);
+    final ageController = TextEditingController(text: widget.age.toString());
+    final heightController = TextEditingController(
+      text: widget.height.toString(),
+    );
+    final weightController = TextEditingController(
+      text: widget.weight.toString(),
+    );
     final bioController = TextEditingController(text: userBio);
-    String selectedGender = userGender;
+    String selectedGender = widget.gender.toString();
 
     showDialog(
       context: context,
@@ -186,13 +193,16 @@ class _HomePageState extends State<Home> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      userName = nameController.text;
-                      userAge = int.tryParse(ageController.text) ?? userAge;
-                      userGender = selectedGender;
-                      userHeight =
-                          double.tryParse(heightController.text) ?? userHeight;
-                      userWeight =
-                          double.tryParse(weightController.text) ?? userWeight;
+                      widget.name = nameController.text;
+                      widget.age =
+                          double.tryParse(ageController.text) ?? widget.age;
+                      widget.gender = selectedGender;
+                      widget.height =
+                          double.tryParse(heightController.text) ??
+                          widget.height;
+                      widget.weight =
+                          double.tryParse(weightController.text) ??
+                          widget.weight;
                       userBio = bioController.text;
                     });
                     Navigator.pop(context);
@@ -255,7 +265,7 @@ class _HomePageState extends State<Home> {
                   ),
                 ),
                 Text(
-                  userName,
+                  widget.name.toString(),
                   style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -415,22 +425,34 @@ class _HomePageState extends State<Home> {
                   ),
                   child: Column(
                     children: [
-                      _buildProfileRow(Icons.person, 'Name', userName),
+                      _buildProfileRow(
+                        Icons.person,
+                        'Name',
+                        widget.name.toString(),
+                      ),
                       const Divider(),
-                      _buildProfileRow(Icons.cake, 'Age', '$userAge years'),
+                      _buildProfileRow(
+                        Icons.cake,
+                        'Age',
+                        '${widget.age} years',
+                      ),
                       const Divider(),
-                      _buildProfileRow(Icons.wc, 'Gender', userGender),
+                      _buildProfileRow(
+                        Icons.wc,
+                        'Gender',
+                        widget.gender.toString(),
+                      ),
                       const Divider(),
                       _buildProfileRow(
                         Icons.height,
                         'Height (cm)',
-                        '$userHeight cm',
+                        '${widget.height} cm',
                       ),
                       const Divider(),
                       _buildProfileRow(
                         Icons.monitor_weight,
                         'Weight (kg)',
-                        '$userWeight kg',
+                        '${widget.weight} kg',
                       ),
                       const Divider(),
                       _buildProfileRow(

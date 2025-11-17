@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/home_page.dart';
 import 'package:gym_globe/pages/login_page.dart';
 import 'package:gym_globe/pages/owner_dashboard.dart';
-import 'package:gym_globe/pages/profile_page.dart';
 import 'package:gym_globe/pages/role_selection_page.dart';
 import 'package:gym_globe/pages/signup_page.dart';
 import 'package:gym_globe/pages/trainer_dashboard.dart';
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.signUpRoute: (context) => const SignupPage(),
         MyRoutes.roleSelectionRoute: (context) => const RoleSelectionPage(),
         MyRoutes.userDashBoard: (context) => const UserDashboardPage(),
-        MyRoutes.userProfile: (context) => const ProfilePage(),
         MyRoutes.trainerDashBoard: (context) => const TrainerDashboardPage(),
         MyRoutes.ownerDashBoard: (context) => const OwnerDashboardPage(),
       },

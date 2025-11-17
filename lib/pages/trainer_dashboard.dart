@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:gym_globe/pages/common%20pages/RoleMainPage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -191,7 +192,18 @@ class _TrainerDashboardPageState extends State<TrainerDashboardPage> {
 
                   // Submit button
                   ElevatedButton.icon(
-                    onPressed: _submitForm,
+                    onPressed: () {
+                      _submitForm;
+                      RoleMainPage(
+                        userName: _nameController.text,
+                        userAge: double.tryParse(_ageController.text),
+                        userGender: "",
+                        userRole: "trainer",
+                        userHeight: null,
+                        userWeight: null,
+                        userActivityLevel: "",
+                      );
+                    },
                     icon: const Icon(
                       Icons.check_circle_outline,
                       color: Colors.white,
