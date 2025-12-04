@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/common%20pages/additonal_trainer_page.dart';
+
 import 'package:gym_globe/pages/common%20pages/addtional_owner_page.dart';
 
 import 'package:gym_globe/pages/common%20pages/chatPage.dart';
@@ -8,6 +9,7 @@ import 'package:gym_globe/pages/common%20pages/diet_page.dart';
 import 'package:gym_globe/pages/common%20pages/home_page.dart';
 import 'package:gym_globe/pages/common%20pages/search_page.dart';
 import 'package:gym_globe/pages/common%20pages/workout_page.dart';
+import 'package:gym_globe/pages/trainer_dashboard.dart';
 
 class RoleMainPage extends StatefulWidget {
   final String? userRole;
@@ -59,7 +61,7 @@ class _RoleMainPageState extends State<RoleMainPage> {
       const SearchPage(),
       const ChatPage(),
       const ContentPage(),
-      const TrainerPage(),
+      const TrainerDashboard(),
     ];
 
     List<Widget> ownerPages = [
@@ -69,7 +71,7 @@ class _RoleMainPageState extends State<RoleMainPage> {
       const SearchPage(),
       const ChatPage(),
       const ContentPage(),
-      const OwnerPage(),
+      const OwnerDashboard(),
     ];
 
     return Scaffold(
@@ -83,7 +85,7 @@ class _RoleMainPageState extends State<RoleMainPage> {
   }
 
   BottomNavigationBar buildBottomNav() {
-    List<BottomNavigationBarItem> baseItems = const [
+    List<BottomNavigationBarItem> baseItems = [
       BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
       BottomNavigationBarItem(icon: Icon(Icons.food_bank), label: "Diet"),
       BottomNavigationBarItem(
@@ -100,7 +102,7 @@ class _RoleMainPageState extends State<RoleMainPage> {
 
     if (widget.userRole == "trainer") {
       baseItems.add(
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Icon(Icons.dashboard),
           label: "Dashboard",
         ),

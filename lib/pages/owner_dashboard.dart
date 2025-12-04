@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gym_globe/pages/common%20pages/RoleMainPage.dart';
+import 'package:gym_globe/utils/routes.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -88,13 +89,27 @@ class _OwnerDashboardPageState extends State<OwnerDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          onPressed: () =>
+              Navigator.pushNamed(context, MyRoutes.roleSelectionRoute),
+          icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white),
+        ),
+        title: Text("Gym Info", style: TextStyle(color: Colors.white)),
+      ),
       body: Stack(
         children: [
           // Background
           Positioned.fill(
-            child: Image.asset(
-              'assets/images/background.jpeg',
-              fit: BoxFit.cover,
+            child: Container(
+              height: double.infinity,
+              width: double.infinity,
+
+              child: Image.asset(
+                'assets/images/background.jpeg',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Positioned.fill(
@@ -260,17 +275,18 @@ class _OwnerDashboardPageState extends State<OwnerDashboardPage> {
                       child: ElevatedButton.icon(
                         onPressed: () {
                           _submitGymDetails;
-                          RoleMainPage();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  RoleMainPage(userRole: "owner"),
+                            ),
+                          );
                         },
                         icon: const Icon(Icons.send, color: Colors.white),
                         label: "Post Gym".text.xl.bold.white.make(),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(
-                            255,
-                            61,
-                            83,
-                            83,
-                          ),
+                          backgroundColor: Colors.lightBlue,
                           foregroundColor: Colors.black,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 50,

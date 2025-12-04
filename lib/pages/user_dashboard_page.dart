@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:gym_globe/utils/routes.dart';
 import 'common pages/RoleMainPage.dart';
-
 
 class UserDashboardPage extends StatefulWidget {
   const UserDashboardPage({super.key});
@@ -33,6 +33,15 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          onPressed: () =>
+              Navigator.pushNamed(context, MyRoutes.roleSelectionRoute),
+          icon: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white),
+        ),
+        title: Text("Your Info", style: TextStyle(color: Colors.white)),
+      ),
       backgroundColor: Colors.black,
       body: Stack(
         children: [
